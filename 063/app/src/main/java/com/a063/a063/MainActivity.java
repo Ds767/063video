@@ -1,10 +1,14 @@
 package com.a063.a063;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String EXTRA_MESSAGE="com.a063.a063";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,5 +29,13 @@ public class MainActivity extends AppCompatActivity {
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");
+    }
+    public  void sendMessage(View view){
+        Intent intent=new Intent(this,PlayActivity.class);
+        EditText editText=(EditText)findViewById(R.id.editText);
+        String message=editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE,message);
+        startActivity(intent);
+
     }
 }

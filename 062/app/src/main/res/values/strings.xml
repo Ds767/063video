@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">062</string>
+    <string name="textview">TextView</string>
+    <string name="name">name</string>
+    <string name="todo">TODO</string>
+    <string name="search">search</string>
+</resources>
